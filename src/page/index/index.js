@@ -4,12 +4,5 @@
  * Time: 14:50
  */
 'use strict';
-
+require('page/common/nav/index.js');
 var _mt = require('util/mt.js');
-
-var html = '<div>{{data}}</div>';
-var data = {
-    data: 'dfsfsdf'
-};
-
-console.log(_mt.renderHtml(html,data));

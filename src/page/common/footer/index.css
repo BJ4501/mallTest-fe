@@ -1,0 +1,20 @@
+ /**
+ * Created by BJ
+ * DateTime: 2018/1/7 16:12 
+ */
+ .footer{
+     padding-bottom: 10px;
+ }
+ .footer .links{
+     text-align: center; /* æ”÷– */
+     color: #666;
+     line-height: 30px;
+ }
+ .footer .links .link{
+     padding: 0 10px;
+ }
+ .footer .copyright{
+     text-align: center;
+     color: #666;
+     line-height: 30px;
+ }

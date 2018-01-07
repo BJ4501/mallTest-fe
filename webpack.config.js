@@ -47,6 +47,7 @@ var config = {
     //配置一些其他的引用
     resolve: {
         alias: {
+            node_modules: __dirname + '/node_modules',
             util: __dirname + '/src/util',
             page: __dirname + '/src/page',
             service: __dirname + '/src/service',

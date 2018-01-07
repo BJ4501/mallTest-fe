@@ -1,0 +1,15 @@
+ /**
+ * Created by BJ
+ * DateTime: 2018/1/7 15:19 
+ */
+ .nav-simple{
+     height: 60px;
+     line-height: 60px;
+     border-bottom: 1px solid #dddddd; /* ÏÂ±ß½ç */
+     background: #fff;
+ }
+ .nav-simple .logo{
+     font-size: 26px;
+     font-weight: bold; /* ¼Ó´Ö */
+     color: dodgerblue;
+ }

@@ -1,0 +1,29 @@
+ /**
+ * Created by BJ
+ * DateTime: 2018/1/7 15:35 
+ */
+ .nav{
+     background: #eeeeee;
+     height: 30px;
+     line-height: 30px;
+ }
+ /* 用户部分 */
+ .nav .user{
+     float: left; /* 靠左 */
+ }
+ /* 中间务空格表示同一元素，既有user又有login*/
+ /* 未登录状态 */
+ .nav .user.login{
+     display: none;
+ }
+ .nav .user .link{
+     margin-right: 5px; /* 空间右留，最左对齐 */
+ }
+ /* 导航链接部分 */
+ .nav .nav-list{
+     float: right;
+ }
+ .nav .nav-list .nav-item{
+     display: inline-block;
+     margin-left: 5px;
+ }

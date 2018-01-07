@@ -1,9 +1,16 @@
 <!DOCTYPE html>
 <!--suppress JSUnresolvedLibraryURL -->
 <html lang="en">
-<%= require('html-loader!./layout/html-head.html') %>
+<head>
+    <%= require('html-loader!./layout/head-common.html') %>
+    <title>TestMallFront</title>
+</head>
 <body>
-    <h3>czxczxc</h3>
-    <script type="text/javascript" src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <%= require('html-loader!./layout/nav.html') %>
+    <div>
+        <i class="fa fa-user"></i>
+    </div>
+    <h2>fdsfdsfdf</h2>
+    <%= require('html-loader!./layout/footer.html') %>
 </body>
 </html>
