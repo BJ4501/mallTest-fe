@@ -5,5 +5,11 @@
  */
 'use strict';
 
-require('./index.css');
-require('../module.js');
+var _mt = require('util/mt.js');
+
+var html = '<div>{{data}}</div>';
+var data = {
+    data: 'dfsfsdf'
+};
+
+console.log(_mt.renderHtml(html,data));
