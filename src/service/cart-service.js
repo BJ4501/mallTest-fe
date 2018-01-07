@@ -7,7 +7,7 @@
 var _mt = require('util/mt.js');
 
 var _cart = {
-    //»ñÈ¡¹ºÎï³µÊıÁ¿
+    //è·å–è´­ç‰©è½¦æ•°é‡
     getCartCount: function (resolve, reject) {
         _mt.request({
             url: _mt.getServerUrl('/cart/get_cart_product_count.do'),

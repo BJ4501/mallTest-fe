@@ -1,7 +1,7 @@
 /**
  * Created by BJ
  * DateTime: 2018/1/7 15:20
- * ÆÕÍ¨µ¼º½À¸
+ * æ™®é€šå¯¼èˆªæ 
  */
 'use strict';
 require('./index.css');

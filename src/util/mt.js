@@ -8,7 +8,7 @@ var conf = {
     serverHost: ''
 };
 var _mt = {
-    //ÍøÂçÇëÇó
+    //ç½‘ç»œè¯·æ±‚
     request: function (param) {
         var _this = this;
         $.ajax({
@@ -17,15 +17,15 @@ var _mt = {
             dataType: param.type || 'json',
             data: param.data || '',
             success: function (res) {
-                //ÇëÇó³É¹¦
+                //è¯·æ±‚æˆåŠŸ
                 if (0 === res.status){
                     typeof param.success === 'function' && param.success(res.data, res.msg);
                 }
-                //Ã»ÓĞµÇÂ¼×´Ì¬£¬ĞèÒªÇ¿ÖÆµÇÂ¼
+                //æ²¡æœ‰ç™»å½•çŠ¶æ€ï¼Œéœ€è¦å¼ºåˆ¶ç™»å½•
                 else if (10 === res.status){
                     _this.doLogin();
                 }
-                //ÇëÇóÊı¾İ´íÎó
+                //è¯·æ±‚æ•°æ®é”™è¯¯
                 else if (1 === res.status){
                     typeof param.error === 'function' && param.error(res.msg);
                 }
@@ -35,53 +35,53 @@ var _mt = {
             }
         });
     },
-    //»ñÈ¡·şÎñÆ÷µØÖ·
+    //è·å–æœåŠ¡å™¨åœ°å€
     getServerUrl: function (path) {
         return conf.serverHost +path;
     },
-    //»ñÈ¡UrlÏà¹Ø²ÎÊı
+    //è·å–Urlç›¸å…³å‚æ•°
     getUrlParam: function (name) {
-        //ÕıÔòÆ¥Åä£ºÔ­URLÊ¾Àı£ºmall.com/login?name=123&pwd=1
-        //Æ¥Åä¹æÔò£º1.ÒÔname¿ªÍ·£¬»ò& ¿ªÊ¼Æ¥Åä 2.¹Ø¼ü´Ê
-        //3.²ÎÊı×Ö·û´®£º'^&'±êÊ¶Èç¹û²»ÊÇ&¾Í²»½áÊøÒ»Ö±Æ¥Åä¶à¸ö'*' 4.ÒÔ&£¬»òÄ©Î²$ Æ¥Åä½áÊø
+        //æ­£åˆ™åŒ¹é…ï¼šåŸURLç¤ºä¾‹ï¼šmall.com/login?name=123&pwd=1
+        //åŒ¹é…è§„åˆ™ï¼š1.ä»¥nameå¼€å¤´ï¼Œæˆ–& å¼€å§‹åŒ¹é… 2.å…³é”®è¯
+        //3.å‚æ•°å­—ç¬¦ä¸²ï¼š'^&'æ ‡è¯†å¦‚æœä¸æ˜¯&å°±ä¸ç»“æŸä¸€ç›´åŒ¹é…å¤šä¸ª'*' 4.ä»¥&ï¼Œæˆ–æœ«å°¾$ åŒ¹é…ç»“æŸ
         var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)');
-        //substr(1): ½«'?'È¥µô
+        //substr(1): å°†'?'å»æ‰
         var result = window.location.search.substr(1).match(reg);
-        //result[2]: È¡³öÆ¥ÅäµÄµÚ¶ş¸ö×Ö·û´®£¬ÔòÎªĞèÒªÈ¡³öµÄÖµ
+        //result[2]: å–å‡ºåŒ¹é…çš„ç¬¬äºŒä¸ªå­—ç¬¦ä¸²ï¼Œåˆ™ä¸ºéœ€è¦å–å‡ºçš„å€¼
         return result ? decodeURIComponent(result[2]) : null;
     },
-    //äÖÈ¾HtmlÄ£°å
+    //æ¸²æŸ“Htmlæ¨¡æ¿
     renderHtml: function (htmlTemplate, data) {
         var template = Hogan.compile(htmlTemplate),
             result = template.render(data);
         return result;
     },
-    //³É¹¦ÌáÊ¾
+    //æˆåŠŸæç¤º
     successTips: function (msg) {
-        alert(msg||'²Ù×÷³É¹¦');
+        alert(msg||'æ“ä½œæˆåŠŸ');
     },
-    //´íÎóÌáÊ¾
+    //é”™è¯¯æç¤º
     errorTips: function (msg) {
-        alert(msg||'²Ù×÷³öÏÖ´íÎó');
+        alert(msg||'æ“ä½œå‡ºç°é”™è¯¯');
     },
-    //×Ö¶ÎµÄÑéÖ¤£¬Ö§³Ö·Ç¿Õ£¬ÊÖ»ú£¬ÓÊÏäµÄÅĞ¶Ï
+    //å­—æ®µçš„éªŒè¯ï¼Œæ”¯æŒéç©ºï¼Œæ‰‹æœºï¼Œé‚®ç®±çš„åˆ¤æ–­
     validate: function (value, type) {
         var value = $.trim(value);
-        //·Ç¿ÕÑéÖ¤
+        //éç©ºéªŒè¯
         if ('require' === type){
-            return !!value; //½«valueÇ¿×ªÎªboolÀàĞÍ
+            return !!value; //å°†valueå¼ºè½¬ä¸ºboolç±»å‹
         }
-        //ÊÖ»úºÅÑéÖ¤
+        //æ‰‹æœºå·éªŒè¯
         if ('phone' === type){
-            //1¿ªÍ·ºóÃæ10Î»Êı×Ö£¬¾ÍÈÏÎªÕâÊÇÒ»¸öÊÖ»úºÅÂë
+            //1å¼€å¤´åé¢10ä½æ•°å­—ï¼Œå°±è®¤ä¸ºè¿™æ˜¯ä¸€ä¸ªæ‰‹æœºå·ç 
             return /^1\d{10}$/.test(value);
         }
-        //ÓÊÏä¸ñÊ½ÑéÖ¤
+        //é‚®ç®±æ ¼å¼éªŒè¯
         if ('email' === type){
             return /^(\w)+(\.\w+)*@(\w)+((\.\w{2,3}){1,3})$/.test(value);
         }
     },
-    //Í³Ò»µÇÂ¼´¦Àí
+    //ç»Ÿä¸€ç™»å½•å¤„ç†
     doLogin: function () {
         window.location.href = './login.html?redirect='+ encodeURIComponent(window.location.href);
     },

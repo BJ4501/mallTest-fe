@@ -7,7 +7,7 @@
 var _mt = require('util/mt.js');
 
 var _user = {
-    //µÇÂ¼¼ì²é
+    //ç™»å½•æ£€æŸ¥
     checkLogin: function (resolve, reject) {
         _mt.request({
             url: _mt.getServerUrl('/user/get_user_info.do'),
@@ -16,7 +16,7 @@ var _user = {
             error: reject
         });
     },
-    //µÇ³ö
+    //ç™»å‡º
     logout: function (resolve, reject) {
         _mt.request({
             url: _mt.getServerUrl('/user/logout.do'),

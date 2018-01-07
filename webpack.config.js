@@ -6,14 +6,15 @@
 var webpack = require('webpack');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-//»·¾³±äÁ¿ÅäÖÃ,dev / online
+//ç¯å¢ƒå˜é‡é…ç½®,dev / online
 var WEBPACK_ENV = process.env.WEBPACK_ENV || 'dev';
 
-//»ñÈ¡html-webpack-plugin²ÎÊıµÄ·½·¨
-var getHtmlConfig = function (name) {
+//è·å–html-webpack-pluginå‚æ•°çš„æ–¹æ³•
+var getHtmlConfig = function (name, title) {
     return{
         template: './src/view/'+ name +'.html',
         filename: 'view/'+ name +'.html',
+        title: title,
         inject: true,
         hash: true,
         chunks: ['common', name]
@@ -24,27 +25,29 @@ var config = {
     entry: {
         'common': ['./src/page/common/index.js'],
         'index': ['./src/page/index/index.js'],
-        'login': ['./src/page/login/index.js']
+        'login': ['./src/page/login/index.js'],
+        'result': ['./src/page/result/index.js']
     },
     output: {
-        //Êä³öÎ»ÖÃ¼°ĞÅÏ¢
-        path: './dist', //×îÖÕÉú³ÉµÄÎÄ¼şµÄÄ¿Â¼
+        //è¾“å‡ºä½ç½®åŠä¿¡æ¯
+        path: './dist', //æœ€ç»ˆç”Ÿæˆçš„æ–‡ä»¶çš„ç›®å½•
         publicPath: '/dist',
         filename: 'js/[name].js'
     },
     externals:{
-        //ÒıÈë×é¼ş
+        //å¼•å…¥ç»„ä»¶
         'jquery' : 'window.jQuery'
     },
     module: {
         loaders: [
-            //Ê¹ÓÃ£¡ Á¬½ÓÁ½¸öloader£¬´ÓÓÒÖÁ×ó
+            //ä½¿ç”¨ï¼ è¿æ¥ä¸¤ä¸ªloaderï¼Œä»å³è‡³å·¦
             { test: /\.css$/, loader: ExtractTextPlugin.extract("style-loader","css-loader") },
-            //url-loader ¼ÓÔØÍ¼Æ¬ ĞèÒªfile-loader model
-            { test: /\.(gif|png|jpg|woff|svg|eot|ttf)\??.*$/, loader: 'url-loader?limit=100&name=../resource/[name].[ext]' }
+            //url-loader åŠ è½½å›¾ç‰‡ éœ€è¦file-loader model
+            { test: /\.(gif|png|jpg|woff|svg|eot|ttf)\??.*$/, loader: 'url-loader?limit=100&name=../resource/[name].[ext]' },
+            { test: /\.string$/, loader: 'html-loader' }
         ]
     },
-    //ÅäÖÃÒ»Ğ©ÆäËûµÄÒıÓÃ
+    //é…ç½®ä¸€äº›å…¶ä»–çš„å¼•ç”¨
     resolve: {
         alias: {
             node_modules: __dirname + '/node_modules',
@@ -55,16 +58,17 @@ var config = {
         }
     },
     plugins:[
-        //ÒıÈëÈ«¾ÖÄ£¿é--¶ÀÁ¢Í¨ÓÃÄ£¿éµ½js/base.js
+        //å¼•å…¥å…¨å±€æ¨¡å—--ç‹¬ç«‹é€šç”¨æ¨¡å—åˆ°js/base.js
         new webpack.optimize.CommonsChunkPlugin({
             name: 'common',
             filename: 'js/base.js'
         }),
-        //°Ñcssµ¥¶À´ò°üµ½ÎÄ¼şÀï
+        //æŠŠcsså•ç‹¬æ‰“åŒ…åˆ°æ–‡ä»¶é‡Œ
         new ExtractTextPlugin("css/[name].css"),
-        //HTMLÄ£°åµÄ´¦Àí
-        new HtmlWebpackPlugin(getHtmlConfig('index')),
-        new HtmlWebpackPlugin(getHtmlConfig('login'))
+        //HTMLæ¨¡æ¿çš„å¤„ç†
+        new HtmlWebpackPlugin(getHtmlConfig('index','é¦–é¡µ')),
+        new HtmlWebpackPlugin(getHtmlConfig('login','ç”¨æˆ·ç™»å½•')),
+        new HtmlWebpackPlugin(getHtmlConfig('result','ç»“æœæç¤ºé¡µé¢'))
     ]
 };
 

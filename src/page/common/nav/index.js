@@ -7,26 +7,26 @@ require('./index.css');
 var _mt = require('util/mt.js');
 var _user = require('service/user-service.js');
 var _cart = require('service/cart-service.js');
-//µ¼º½
+//å¯¼èˆª
 var nav = {
-    //³õÊ¼»¯
+    //åˆå§‹åŒ–
     init: function () {
         this.bindEvent();
         this.loadUserInfo();
         this.loadCartCount();
         return this;
     },
-    //°ó¶¨³£ÓÃÊÂ¼ş
+    //ç»‘å®šå¸¸ç”¨äº‹ä»¶
     bindEvent: function () {
-        //µÇÂ¼µã»÷ÊÂ¼ş
+        //ç™»å½•ç‚¹å‡»äº‹ä»¶
         $('.js-login').click(function () {
             _mt.doLogin();
         });
-        //×¢²áµã»÷ÊÂ¼ş
+        //æ³¨å†Œç‚¹å‡»äº‹ä»¶
         $('.js-register').click(function () {
             window.location.href = './register.html';
         });
-        //ÍË³öµã»÷ÊÂ¼ş
+        //é€€å‡ºç‚¹å‡»äº‹ä»¶
         $('.js-logout').click(function () {
             _user.logout(function (res) {
                 window.location.reload();
@@ -35,7 +35,7 @@ var nav = {
             });
         });
     },
-    //¼ÓÔØÓÃ»§ĞÅÏ¢
+    //åŠ è½½ç”¨æˆ·ä¿¡æ¯
     loadUserInfo: function () {
         _user.checkLogin(function (res) {
             $('.user.not-login').hide().sibling('.user.login').show()
@@ -44,7 +44,7 @@ var nav = {
             //do nothing
         });
     },
-    //¼ÓÔØ¹ºÎï³µÊıÁ¿
+    //åŠ è½½è´­ç‰©è½¦æ•°é‡
     loadCartCount: function () {
         _cart.getCartCount(function (res) {
             $('.nav .cart-cont').text(res || 0);

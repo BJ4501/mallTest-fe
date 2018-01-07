@@ -1,0 +1,26 @@
+/**
+* Created by BJ
+* DateTime: 2018/1/7 20:51
+*/
+/* 导航主体 */
+.nav-side{
+    float: left; /* 左右关系：左 */
+    width: 130px;
+    min-height: 100px;
+}
+.nav-side .nav-item{
+    line-height: 25px; /* 上下高度 */
+    font-size: 13px;
+}
+.nav-side .nav-item .link{
+    color: #666666;
+}
+/* active颜色 */
+.nav-side .nav-item.active .link{
+    color: #c60023;
+}
+/* 右侧内容区 */
+.content.with-nav{
+    float: left;
+    width: 950px;
+}

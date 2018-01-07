@@ -1,29 +1,29 @@
- /**
- * Created by BJ
- * DateTime: 2018/1/7 15:35 
- */
- .nav{
-     background: #eeeeee;
-     height: 30px;
-     line-height: 30px;
- }
- /* ÓÃ»§²¿·Ö */
- .nav .user{
-     float: left; /* ¿¿×ó */
- }
- /* ÖĞ¼äÎñ¿Õ¸ñ±íÊ¾Í¬Ò»ÔªËØ£¬¼ÈÓĞuserÓÖÓĞlogin*/
- /* Î´µÇÂ¼×´Ì¬ */
- .nav .user.login{
-     display: none;
- }
- .nav .user .link{
-     margin-right: 5px; /* ¿Õ¼äÓÒÁô£¬×î×ó¶ÔÆë */
- }
- /* µ¼º½Á´½Ó²¿·Ö */
- .nav .nav-list{
-     float: right;
- }
- .nav .nav-list .nav-item{
-     display: inline-block;
-     margin-left: 5px;
- }
+/**
+* Created by BJ
+* DateTime: 2018/1/7 15:35
+*/
+.nav{
+    background: #eeeeee;
+    height: 30px;
+    line-height: 30px;
+}
+/* ç”¨æˆ·éƒ¨åˆ† */
+.nav .user{
+    float: left; /* é å·¦ */
+}
+/* ä¸­é—´åŠ¡ç©ºæ ¼è¡¨ç¤ºåŒä¸€å…ƒç´ ï¼Œæ—¢æœ‰useråˆæœ‰login*/
+/* æœªç™»å½•çŠ¶æ€ */
+.nav .user.login{
+    display: none;
+}
+.nav .user .link{
+    margin-right: 5px; /* ç©ºé—´å³ç•™ï¼Œæœ€å·¦å¯¹é½ */
+}
+/* å¯¼èˆªé“¾æ¥éƒ¨åˆ† */
+.nav .nav-list{
+    float: right;
+}
+.nav .nav-list .nav-item{
+    display: inline-block;
+    margin-left: 5px;
+}
