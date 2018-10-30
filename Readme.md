@@ -1,27 +1,29 @@
 ## First Front Code Test
 - Test
 
-#### ÎÄ¼ş¼ĞËµÃ÷
-- /image ´æ·ÅÍ¼Æ¬Ïà¹Ø
-- /page ´æ·ÅÂß¼­´úÂë
+#### æ–‡ä»¶å¤¹è¯´æ˜
+- /image å­˜æ”¾å›¾ç‰‡ç›¸å…³
+- /page å­˜æ”¾é€»è¾‘ä»£ç 
 - /service 
-- /utils ´æ·Å¹¤¾ßÀà
+- /utils å­˜æ”¾å·¥å…·ç±»
 - /view 
 
-#### Æô¶¯ËµÃ÷
+#### å¯åŠ¨è¯´æ˜
 - dev:  (port:8088)
 ```
 npm run dev
 npm run dev_win
 ```
 
-#### Ò»Ğ©¿ª·¢ÖĞ°²×°µÄ¹¤¾ß
+#### ä¸€äº›å¼€å‘ä¸­å®‰è£…çš„å·¥å…·
 ```
-npm install <plugin-name> --save ÓÃÓÚ³ÉÆ·ÖĞ
-npm install <plugin-name> --save-dev Ö»ÓÃÓÚ¿ª·¢ÖĞ
+npm install <plugin-name> --save ç”¨äºæˆå“ä¸­
+npm install <plugin-name> --save-dev åªç”¨äºå¼€å‘ä¸­
 ```
-- ¹¤¾ßÃû
+- å·¥å…·å
 ```$xslt
-hogan äÖÈ¾HtmlÄ£°å-dev
-font-awesome Í¼±ê°ü£¬×ÖÌå°ü 
+hogan æ¸²æŸ“Htmlæ¨¡æ¿-dev
+font-awesome å›¾æ ‡åŒ…ï¼Œå­—ä½“åŒ… 
 ```
+
+Test
